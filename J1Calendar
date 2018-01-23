@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class J1Calendar {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int startDate = sc.nextInt();
+		int totalDays = sc.nextInt();
+		int currentDate = 1;
+		System.out.println("Sun Mon Tue Wed Thr Fri Sat");
+		for(int week = 0; week <= 5; week++) {
+			for(int day = 0; day < 7; day++) {
+				if (currentDate <= totalDays) {
+					if (currentDate < startDate) {
+						System.out.print("    ");
+						startDate--;
+					}
+					else if (currentDate < 10) {
+						System.out.print("  " + currentDate + " ");
+						currentDate++;
+					}
+					else {
+						System.out.print(" " + currentDate + " ");
+						currentDate++;
+					}
+				}
+			}
+			System.out.println("");
+		}
+	}
+}
